@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para mi Dulce de chocolate late 💗</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Partículas de corazones flotantes -->
+    <div class="particulas-container">
+        <div class="particula">💗</div>
+        <div class="particula">💖</div>
+        <div class="particula">💕</div>
+        <div class="particula">💗</div>
+        <div class="particula">💖</div>
+        <div class="particula">💕</div>
+        <div class="particula">💗</div>
+        <div class="particula">💖</div>
+        <div class="particula">💕</div>
+        <div class="particula">💗</div>
+    </div>
+
+    <!-- Música -->
+    <audio id="musica" src="musica.mp3" loop></audio>
+    
+    <!-- Control de música -->
+    <button id="musicToggle" class="music-toggle">
+        <span class="playing">🔊</span>
+        <span class="paused">🔇</span>
+    </button>
+
+    <!-- Pantalla inicial -->
+    <section id="inicio" class="pantalla activo">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="titulo-principal animate-title">
+                    Hola, mi Dulce Paloma 💗
+                </h1>
+                <p class="sub-title">Tengo algo muy especial preparado para ti… aunque se que no te gusta que te digan Paloma :( </p>
+                <div class="corazon-grande">
+                    <svg viewBox="0 0 100 100" class="corazon-svg">
+                        <path d="M50,90 C50,90 10,65 10,40 C10,25 20,15 30,15 C40,15 50,25 50,25 C50,25 60,15 70,15 C80,15 90,25 90,40 C90,65 50,90 50,90 Z" fill="#ff1744"/>
+                    </svg>
+                </div>
+                <button id="btnIniciar" class="btn btn-primary">
+                    <span>Ábrelo</span>
+                    <span class="btn-icon">💘</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sorpresas que se revelan -->
+    <section id="sorpresas" class="pantalla">
+        <div class="container">
+            <h2 class="titulo-seccion">Pequeñas palabras para ti…</h2>
+            
+            <div class="cartas-grid">
+                <div class="carta-container" onclick="revelarMensaje(1)">
+                    <div class="carta">
+                        <div class="carta-front">
+                            <div class="sobre">
+                                <div class="sobre-flap"></div>
+                                <div class="sobre-body"></div>
+                                <span class="carta-numero">💌</span>
+                            </div>
+                            <p class="carta-label">Carta 1</p>
+                        </div>
+                        <div class="carta-back">
+                            <p id="msg1" class="mensaje-carta">
+                                <span class="mensaje-icon">✨</span>
+                                Eres especial para mi y mucho sabes?
+                                <span class="mensaje-corazon">💗</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carta-container" onclick="revelarMensaje(2)">
+                    <div class="carta">
+                        <div class="carta-front">
+                            <div class="sobre">
+                                <div class="sobre-flap"></div>
+                                <div class="sobre-body"></div>
+                                <span class="carta-numero">💌</span>
+                            </div>
+                            <p class="carta-label">Carta 2</p>
+                        </div>
+                        <div class="carta-back">
+                            <p id="msg2" class="mensaje-carta">
+                                <span class="mensaje-icon">💪</span>
+                                Eres fuerte, muy linda y esforzada., solo te admiro mucho
+                                <span class="mensaje-corazon">✨</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carta-container" onclick="revelarMensaje(3)">
+                    <div class="carta">
+                        <div class="carta-front">
+                            <div class="sobre">
+                                <div class="sobre-flap"></div>
+                                <div class="sobre-body"></div>
+                                <span class="carta-numero">💌</span>
+                            </div>
+                            <p class="carta-label">Carta 3</p>
+                        </div>
+                        <div class="carta-back">
+                            <p id="msg3" class="mensaje-carta">
+                                <span class="mensaje-icon">🌺</span>
+                                Eres hermosa, y quiero acompañarte si tu me dejas.
+                                <span class="mensaje-corazon">🌸</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button id="btnJuego" class="btn btn-secondary">
+                <span>Continuar al mini-juego</span>
+                <span class="btn-icon">💞</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Mini-juego -->
+    <section id="juego" class="pantalla">
+        <div class="container">
+            <h2 class="titulo-seccion">Mini-juego del corazón</h2>
+            <p class="juego-instruccion">Haz clic en el corazón… :3</p>
+            
+            <div class="juego-corazon-container">
+                <button id="btnCorazon" class="btn-corazon">
+                    <svg viewBox="0 0 100 100" class="corazon-interactivo">
+                        <path d="M50,90 C50,90 10,65 10,40 C10,25 20,15 30,15 C40,15 50,25 50,25 C50,25 60,15 70,15 C80,15 90,25 90,40 C90,65 50,90 50,90 Z" fill="url(#gradient)"/>
+                        <defs>
+                            <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#ff1744;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#f50057;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <span class="corazon-texto">Haz clic aquí 💗</span>
+                </button>
+            </div>
+
+            <div id="mensajeJuego" class="mensaje-revelado">
+                <div class="mensaje-contenido">
+                    <p class="mensaje-linea">Aunque tú no lo creas…</p>
+                    <p class="mensaje-linea">Has llegado a mi vida cuando menos lo esperaba.</p>
+                    <p class="mensaje-linea">Eres importante para mí.</p>
+                    <p class="mensaje-linea destacado">Eres mi Dulce de chocolate late.</p>
+                    <p class="mensaje-linea final">Y creedme no pense en sentir tanto por ti, me preocupas y lo que has pasado solo hace que quiera compartir contigo todo 💖</p>
+                </div>
+            </div>
+
+            <button id="btnFinal" class="btn btn-secondary oculto">
+                <span>Continuar</span>
+                <span class="btn-icon">✨</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Tarjeta animada -->
+    <section id="tarjeta" class="pantalla">
+        <div class="container">
+            <h2 class="titulo-seccion">Tu tarjeta especial 💌</h2>
+
+            <div class="tarjeta-3d">
+                <div class="tarjeta-inner">
+                    <div class="tarjeta-front">
+                        <div class="tarjeta-decoracion">
+                            <div class="linea-decorativa"></div>
+                            <span class="tarjeta-emoji">💗</span>
+                            <div class="linea-decorativa"></div>
+                        </div>
+                        <h3>Para ti</h3>
+                        <p class="tap-hint">Toca para abrir</p>
+                        <div class="esquinas">
+                            <span class="esquina tl"></span>
+                            <span class="esquina tr"></span>
+                            <span class="esquina bl"></span>
+                            <span class="esquina br"></span>
+                        </div>
+                    </div>
+                    <div class="tarjeta-back">
+                        <div class="tarjeta-contenido-texto">
+                            <p class="mensaje-personalizado">
+                                Quieero decirte que no por seer este día te doy este pequeñisimo detalle para ti.
+                                <br><br>
+                                Porque tratare de hacerlo en cualquier dia porque en serio TE QUIERO MUCHO.
+                                <br><br>
+                                Eres especial de maneras que las palabras apenas pueden describir.
+                                <br><br>
+                                <span class="firma">Con todo mi cariño MI DULCEEEEE💘</span>
+                            </p>
+                        </div>
+                        <div class="esquinas">
+                            <span class="esquina tl"></span>
+                            <span class="esquina tr"></span>
+                            <span class="esquina bl"></span>
+                            <span class="esquina br"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button id="btnDedicatoria" class="btn btn-secondary">
+                <span>Última Carta</span>
+                <span class="btn-icon">💖</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Dedicatoria final -->
+    <section id="final" class="pantalla">
+        <div class="container">
+            <div class="final-content">
+                <h2 class="titulo-final">Mi dedicatoria para ti 💞</h2>
+                
+                <div class="mensaje-final-container">
+                    <div class="decoracion-top">
+                        <span>✨</span>
+                        <span>💗</span>
+                        <span>✨</span>
+                    </div>
+                    
+                    <div class="mensaje-final-texto">
+                        <p>
+                            Gracias por ser quien eres, por cada sonrisa, por cada aneecdota compartida conmigo.
+                        </p>
+                        <p>
+                            Tu compañia palabras y anecdotas hace que cada día valga la pena, y tu compañía es el mejor regalo que la vida me ha dado ademas de quee me haces reir y me duele saber que a veces te sientes mal es por ello que puedes contarme todo para ello estoy aqui.
+                        </p>
+                        <p>
+                            Que este día especial sea tan maravilloso como tú lo eres para mí y no solo este dia ahora lo eres para siempre Dios quiera que asi sea porque enserio te quiero demasiado, y las palabra que me has dicho en verdad me fortalecen mucho no se porque me apoyas tanto solo te AGRADEZCO.
+                        </p>
+                        <p class="mensaje-cierre">
+                            <strong>Feliz San Valentín, mi Dulce de chocolate late Latee💗</strong>
+                        </p>
+                    </div>
+                    
+                    <div class="decoracion-bottom">
+                        <span>💕</span>
+                        <span>🌸</span>
+                        <span>💕</span>
+                    </div>
+                </div>
+
+                <div class="fuegos-artificiales">
+                    <div class="fuego"></div>
+                    <div class="fuego"></div>
+                    <div class="fuego"></div>
+                    <div class="fuego"></div>
+                    <div class="fuego"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
